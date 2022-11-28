@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Config;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using reality_subscribe_api.Model;
 
@@ -12,8 +13,8 @@ namespace Infra.DBConfiguration.EFCore
         {
             if (!dbContextOptionsBuilder.IsConfigured)
             {
-                dbContextOptionsBuilder.UseSqlServer(DatabaseConnection.ConnectionConfiguration
-                                                    .GetConnectionString("DefaultConnection"));
+                var service = Configuration.GetService(Configuration.Service);
+                dbContextOptionsBuilder.UseSqlServer(service.ConnectionString);
             }
         }
 
