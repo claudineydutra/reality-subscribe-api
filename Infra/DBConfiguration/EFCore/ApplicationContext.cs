@@ -1,7 +1,9 @@
 ﻿using Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using reality_subscribe_api.Model;
+using System.Diagnostics;
 
 namespace Infra.DBConfiguration.EFCore
 {
@@ -13,8 +15,15 @@ namespace Infra.DBConfiguration.EFCore
         {
             if (!dbContextOptionsBuilder.IsConfigured)
             {
-                var service = Configuration.GetService(Configuration.Service);
+                var service = RealityCoreConfiguration.GetService(RealityCoreConfiguration.Service);
                 dbContextOptionsBuilder.UseSqlServer(service.ConnectionString);
+
+                if (Debugger.IsAttached)
+                {
+                    dbContextOptionsBuilder
+                        .LogTo(Console.WriteLine, LogLevel.Information)
+                        .EnableSensitiveDataLogging();
+                }
             }
         }
 

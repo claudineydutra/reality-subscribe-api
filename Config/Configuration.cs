@@ -3,7 +3,11 @@ using System.Reflection;
 
 namespace Config
 {
-    public class Configuration
+    internal static class GlobalSettings
+    {
+        public static RealityCoreConfiguration Configuration { get; set; }
+    }
+    public class RealityCoreConfiguration
     {
         public const string Service = "Reality";
         public List<Service> Services { get; set; }
@@ -13,14 +17,21 @@ namespace Config
             return settings.Services.FirstOrDefault(x => x.ServiceName == serviceName);
         }
 
-        private static Configuration LoadJson()
+        private static RealityCoreConfiguration LoadJson()
         {
-            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var configPath = Path.Combine(path, "appsettings.json");
-            var reader = new JsonTextReader(new StringReader(File.ReadAllText(configPath)));
-            var serializer = new JsonSerializer();
-            var config = serializer.Deserialize<Configuration>(reader);
-            return config;
+            RealityCoreConfiguration config = null;
+            if(GlobalSettings.Configuration == null)
+            {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                var configPath = Path.Combine(path, "appsettings.Development.json");
+                var reader = new JsonTextReader(new StringReader(File.ReadAllText(configPath)));
+                var serializer = new JsonSerializer();
+                config = serializer.Deserialize<RealityCoreConfiguration>(reader);
+                GlobalSettings.Configuration = config;
+            }
+
+            return GlobalSettings.Configuration;
+            
 
         }
     }
