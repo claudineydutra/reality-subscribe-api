@@ -10,6 +10,12 @@ namespace reality_subscribe_api.Controllers
     [Route("api/[controller]")]
     public class RealityControllerBase : ControllerBase
     {
+        public readonly IHttpContextAccessor _httpContextAccessor;
+        public RealityControllerBase(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
         protected ErrorDetails GenerateValidationProblemDetails(List<ValidationFailure> errors, string method = "")
         {
             var errorMessage = errors.FirstOrDefault()?.ErrorMessage;

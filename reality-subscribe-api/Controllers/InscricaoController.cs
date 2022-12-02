@@ -7,7 +7,7 @@ namespace reality_subscribe_api.Controllers
     public class InscricaoController : RealityControllerBase
     {
         public readonly IMediator _mediator;
-        public InscricaoController(IMediator mediator)
+        public InscricaoController(IMediator mediator, IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
         {
             _mediator = mediator;
         }
