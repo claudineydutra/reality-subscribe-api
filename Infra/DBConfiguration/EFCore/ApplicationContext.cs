@@ -1,4 +1,5 @@
 ﻿using Config;
+using Infra.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -32,7 +33,10 @@ namespace Infra.DBConfiguration.EFCore
         {
         }
 
-        public DbSet<Usuario> User { get; set; }
-        public DbSet<Inscricao> TaskToDo { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new InscricaoMap());
+        }
     }
 }
