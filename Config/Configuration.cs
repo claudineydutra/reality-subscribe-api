@@ -23,11 +23,11 @@ namespace Config
         {
             return LoadJson()?.CorsOrigins;
         }
-        
+
         private static RealityCoreConfiguration LoadJson()
         {
             RealityCoreConfiguration config = null;
-            if(GlobalSettings.Configuration == null)
+            if (GlobalSettings.Configuration == null)
             {
                 var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 var configPath = Path.Combine(path, "appsettings.Development.json");

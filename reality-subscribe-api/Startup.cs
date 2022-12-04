@@ -3,24 +3,13 @@ using Config;
 using Infra.AutoMapper;
 using Infra.DBConfiguration.EFCore;
 using MediatR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using reality_subscribe_api.IoC;
 using reality_subscribe_api.Middleware;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
-using Steeltoe.Management.Endpoint;
-using System;
-using System.Configuration;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace reality_subscribe_api
 {
@@ -45,7 +34,7 @@ namespace reality_subscribe_api
         {
             services.ConfigureCloudFoundryOptions(Configuration);
             //services.AddAllActuators(Configuration);
-            
+
 
             services.AddCors(options =>
             {
@@ -71,7 +60,7 @@ namespace reality_subscribe_api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Reality.WebApi", Version = "v1" });
                 c.DescribeAllParametersInCamelCase();
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-             });
+            });
 
             services.AddMediatR(Assembly.GetExecutingAssembly(), typeof(IIntegrationService).Assembly);
 

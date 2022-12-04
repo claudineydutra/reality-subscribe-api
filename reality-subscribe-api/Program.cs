@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 using Steeltoe.Common.Hosting;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
 
@@ -29,6 +26,6 @@ namespace reality_subscribe_api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddCloudFoundry();
             });
-        
+
     }
 }

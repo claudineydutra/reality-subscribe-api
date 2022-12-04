@@ -1,9 +1,7 @@
 ﻿using Config;
 using Infra.Mapping;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using reality_subscribe_api.Model;
 using System.Diagnostics;
 
 namespace Infra.DBConfiguration.EFCore

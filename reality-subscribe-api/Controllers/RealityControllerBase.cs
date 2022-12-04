@@ -33,7 +33,7 @@ namespace reality_subscribe_api.Controllers
         protected ActionResult ValidationError(List<ValidationFailure> errors)
         {
             var errorDetails = GenerateValidationProblemDetails(errors);
-            if(errorDetails == null)
+            if (errorDetails == null)
             {
                 throw new ValidationException(nameof(errorDetails));
             }
