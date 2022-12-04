@@ -11,12 +11,19 @@ namespace Config
     {
         public const string Service = "Reality";
         public List<Service> Services { get; set; }
+        public List<string> CorsOrigins { get; set; }
+
         public static Service GetService(string serviceName)
         {
             var settings = LoadJson();
             return settings.Services.FirstOrDefault(x => x.ServiceName == serviceName);
         }
 
+        public static List<string> GetCorsOrigins()
+        {
+            return LoadJson()?.CorsOrigins;
+        }
+        
         private static RealityCoreConfiguration LoadJson()
         {
             RealityCoreConfiguration config = null;
@@ -31,8 +38,6 @@ namespace Config
             }
 
             return GlobalSettings.Configuration;
-            
-
         }
     }
 

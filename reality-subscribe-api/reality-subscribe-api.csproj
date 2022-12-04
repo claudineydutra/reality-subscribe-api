@@ -22,7 +22,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Steeltoe.Common.Hosting" Version="3.2.1" />
+    <PackageReference Include="Steeltoe.Connector.CloudFoundry" Version="3.2.1" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.CloudFoundryBase" Version="3.2.1" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.CloudFoundryCore" Version="3.2.1" />
+    <PackageReference Include="Steeltoe.Management.EndpointBase" Version="3.2.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.23" />
   </ItemGroup>
 
   <ItemGroup>
