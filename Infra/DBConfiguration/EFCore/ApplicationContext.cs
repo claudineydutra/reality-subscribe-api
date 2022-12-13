@@ -9,7 +9,9 @@ namespace Infra.DBConfiguration.EFCore
     public class ApplicationContext : DbContext
     {
         /* Creating DatabaseContext without Dependency Injection */
-        public ApplicationContext() { }
+        public ApplicationContext() 
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
             if (!dbContextOptionsBuilder.IsConfigured)
