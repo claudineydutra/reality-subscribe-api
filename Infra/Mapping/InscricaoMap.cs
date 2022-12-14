@@ -4,9 +4,9 @@ using reality_subscribe_api.Model;
 
 namespace Infra.Mapping
 {
-    public class InscricaoMap : IEntityTypeConfiguration<Inscricao>
+    public class InscricaoMap : IEntityTypeConfiguration<Subscribe>
     {
-        public void Configure(EntityTypeBuilder<Inscricao> builder)
+        public void Configure(EntityTypeBuilder<Subscribe> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Email);

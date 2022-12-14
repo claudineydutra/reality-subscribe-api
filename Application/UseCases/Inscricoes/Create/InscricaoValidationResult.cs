@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace Application.UseCases.Inscricao.Create
+namespace Application.UseCases.Inscricoes.Create
 {
     public class InscricaoValidationResult : ValidationResult
     {

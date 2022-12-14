@@ -1,4 +1,4 @@
-﻿using Application.UseCases.Inscricao.Create;
+﻿using Application.UseCases.Inscricoes.Create;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

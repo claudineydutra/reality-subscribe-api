@@ -2,7 +2,7 @@
 
 namespace reality_subscribe_api.Model
 {
-    public class Inscricao : BaseEntity
+    public class Subscribe : BaseEntity
     {
         public string Nome { get; set; }
         public string Email { get; set; }

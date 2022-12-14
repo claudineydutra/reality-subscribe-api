@@ -22,7 +22,7 @@ namespace Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("reality_subscribe_api.Model.Inscricao", b =>
+            modelBuilder.Entity("reality_subscribe_api.Model.Subscribe", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,10 +47,10 @@ namespace Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inscricao");
+                    b.ToTable("Subscribe");
                 });
 
-            modelBuilder.Entity("reality_subscribe_api.Model.Usuario", b =>
+            modelBuilder.Entity("reality_subscribe_api.Model.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuario");
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 
-namespace Application.UseCases.Inscricao.Create
+namespace Application.UseCases.Inscricoes.Create
 {
     public class CreateInscricaoCommand : Command<CreateInscricaoValidator, CreateInscricaoCommand>, IRequest<ValidationResult>
     {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Application.UseCases.Inscricao.Create
+namespace Application.UseCases.Inscricoes.Create
 {
     public class CreateInscricaoValidator : AbstractValidator<CreateInscricaoCommand>
     {

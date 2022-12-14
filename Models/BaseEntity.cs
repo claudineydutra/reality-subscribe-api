@@ -2,9 +2,9 @@
 {
     public class BaseEntity
     {
-        public Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifieddDate { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime ModifieddDate { get; set; } = DateTime.Now;
 
 
     }

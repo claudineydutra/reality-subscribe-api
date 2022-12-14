@@ -9,16 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Inscricao\Delete\" />
-    <Folder Include="UseCases\Inscricao\Read\" />
-    <Folder Include="UseCases\Usuario\Delete\" />
-    <Folder Include="UseCases\Usuario\Read\" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.0.2" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.0.2" />
-    <PackageReference Include="MediatR" Version="11.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Inscricoes\" />
+    <Folder Include="UseCases\Usuarios\" />
   </ItemGroup>
 
 </Project>
