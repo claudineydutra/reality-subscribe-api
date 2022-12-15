@@ -1,4 +1,7 @@
-﻿using Infra.DBConfiguration.EFCore;
+﻿using Application.Infra;
+using Infra.DBConfiguration.EFCore;
+using Infra.Repository;
+using reality_subscribe_api.Model;
 
 namespace reality_subscribe_api.IoC
 {
@@ -11,6 +14,8 @@ namespace reality_subscribe_api.IoC
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Repositorys
+            services.AddScoped<IARepository<Subscribe>, SubscribeRepository>();
+            services.AddScoped<IARepository<User>, UserRepository>();
 
             services.AddHttpContextAccessor();
         }

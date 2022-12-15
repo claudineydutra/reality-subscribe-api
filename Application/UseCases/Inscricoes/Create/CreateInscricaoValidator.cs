@@ -10,7 +10,7 @@ namespace Application.UseCases.Inscricoes.Create
 
             RuleFor(x => x.Email).NotEmpty().WithMessage("Por favor informe o  Email");
 
-            RuleFor(x => x.DataDeNascimento).NotEmpty().WithMessage("Por favor informe a Data de nascimento");
+            RuleFor(x => x.DataNascimento).NotEmpty().WithMessage("Por favor informe a Data de nascimento");
         }
     }
 }
