@@ -15,7 +15,6 @@ namespace reality_subscribe_api.IoC
 
             //Repositorys
             services.AddScoped<IARepository<Subscribe>, SubscribeRepository>();
-            services.AddScoped<IARepository<User>, UserRepository>();
 
             services.AddHttpContextAccessor();
         }

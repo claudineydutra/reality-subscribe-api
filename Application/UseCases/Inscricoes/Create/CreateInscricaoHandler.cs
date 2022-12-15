@@ -1,5 +1,6 @@
 ﻿using Application.Infra;
 using AutoMapper;
+using DevOne.Security.Cryptography.BCrypt;
 using FluentValidation.Results;
 using MediatR;
 using reality_subscribe_api.Model;
@@ -23,8 +24,12 @@ namespace Application.UseCases.Inscricoes.Create
             {
                 return request.ValidationResult;
             }
-
             var inscricao = _mapper.Map<Subscribe>(request);
+
+            var salt = BCryptHelper.GenerateSalt();
+            var passwordHash = BCryptHelper.HashPassword(inscricao.Senha, salt);
+
+            inscricao.Senha = passwordHash;
 
             _inscricaoRepository.Insert(inscricao);
             _inscricaoRepository.Commit();
@@ -34,7 +39,7 @@ namespace Application.UseCases.Inscricoes.Create
                 Id = inscricao.Id,
                 Nome = request.Nome,
                 Email = request.Email,
-                DataNascimento= request.DataNascimento,
+                DataNascimento = request.DataNascimento,
             };
         }
     }

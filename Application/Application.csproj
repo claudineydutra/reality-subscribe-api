@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="BCrypt" Version="1.0.0" />
     <PackageReference Include="FluentValidation" Version="11.0.2" />
     <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
@@ -20,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Inscricoes\" />
-    <Folder Include="UseCases\Usuarios\" />
+    <Folder Include="UseCases\Inscricoes\GetAll\" />
   </ItemGroup>
 
 </Project>

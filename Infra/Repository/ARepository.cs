@@ -13,7 +13,7 @@ namespace Infra.Repository
         public ARepository(DbContext context)
         {
             _context = context;
-            if (context == null)
+            if (context != null)
             {
                 _dbSet = _context.Set<TEntity>();
             }

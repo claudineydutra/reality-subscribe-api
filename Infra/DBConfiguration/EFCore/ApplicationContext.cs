@@ -9,7 +9,7 @@ namespace Infra.DBConfiguration.EFCore
     public class ApplicationContext : DbContext
     {
         /* Creating DatabaseContext without Dependency Injection */
-        public ApplicationContext() 
+        public ApplicationContext()
         {
         }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
@@ -35,7 +35,6 @@ namespace Infra.DBConfiguration.EFCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new InscricaoMap());
         }
     }
