@@ -49,9 +49,9 @@ namespace Infra.Repository
             return _dbSet.Find(keyValues);
         }
 
-        public virtual IQueryable<TEntity> SelectQuery(string query, params object[] parameters)
+        public virtual IQueryable<TEntity> SelectQuery(string query)
         {
-            return _context.Set<TEntity>().FromSqlRaw(query, parameters).AsQueryable();
+            return _context.Set<TEntity>().FromSqlRaw(query).AsQueryable();
         }
         public virtual bool Any(Expression<Func<TEntity, bool>> pFilter = null)
         {

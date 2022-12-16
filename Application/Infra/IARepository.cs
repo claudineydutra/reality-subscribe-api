@@ -12,7 +12,7 @@ namespace Application.Infra
         IEnumerable<TEntity> GetAllByFilter(Expression<Func<TEntity, bool>> pFilter = null);
         TEntity Find(Expression<Func<TEntity, bool>> keys = null);
         TEntity Find(params object[] keyValues);
-        IQueryable<TEntity> SelectQuery(string query, params object[] parameters);
+        IQueryable<TEntity> SelectQuery(string query);
         bool Any(Expression<Func<TEntity, bool>> pFilter = null);
         void Insert(TEntity entity);
         void InsertRange(IEnumerable<TEntity> entities);

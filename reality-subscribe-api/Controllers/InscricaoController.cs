@@ -1,4 +1,6 @@
 ﻿using Application.UseCases.Inscricoes.Create;
+using Application.UseCases.Inscricoes.GetAll;
+using ICM.Core.Application.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +23,13 @@ namespace reality_subscribe_api.Controllers
                 return ValidationError(validationResult.Errors);
             }
             return Ok(validationResult);
+        }
+
+        [HttpGet("getall")]
+        public async Task<ActionResult<GetAllInscricaoCommandResult>> GetAll([FromQuery] GetAllInscricaoCommand request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
         }
     }
 }
