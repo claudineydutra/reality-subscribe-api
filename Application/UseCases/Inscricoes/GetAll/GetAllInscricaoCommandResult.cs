@@ -1,5 +1,4 @@
-﻿using ICM.Core.Application.Common;
-using reality_subscribe_api.Model;
+﻿using reality_subscribe_api.Model;
 
 namespace Application.UseCases.Inscricoes.GetAll
 {

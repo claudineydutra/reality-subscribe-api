@@ -1,6 +1,5 @@
 ﻿using Application.UseCases.Inscricoes.Create;
 using Application.UseCases.Inscricoes.GetAll;
-using ICM.Core.Application.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,5 +1,4 @@
-﻿using ICM.Core.Application.Common;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.UseCases.Inscricoes.GetAll
 {

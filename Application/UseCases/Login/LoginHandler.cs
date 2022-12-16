@@ -1,23 +1,23 @@
 ﻿using Application.Infra;
 using DevOne.Security.Cryptography.BCrypt;
 using MediatR;
-using reality_subscribe_api.Model;
+using Models;
 
 namespace Application.UseCases.Login
 {
     public class LoginHandler : IRequestHandler<LoginCommand, LoginCommandResult>
     {
-        private readonly IARepository<Subscribe> _subscribeRepository;
+        private readonly IARepository<User> _userRepository;
 
-        public LoginHandler(IARepository<Subscribe> subscribeRepository)
+        public LoginHandler(IARepository<User> userRepository)
         {
-            _subscribeRepository = subscribeRepository;
+            _userRepository = userRepository;
         }
 
         public async Task<LoginCommandResult> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
 
-            var user = _subscribeRepository.Queryable()
+            var user = _userRepository.Queryable()
                 .Where(x => x.Email == request.UserName)
                 .FirstOrDefault();
 

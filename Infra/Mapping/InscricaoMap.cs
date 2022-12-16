@@ -12,7 +12,6 @@ namespace Infra.Mapping
             builder.Property(x => x.Email);
             builder.Property(x => x.Nome);
             builder.Property(x => x.DataNascimento);
-            builder.Property(x => x.Senha);
             builder.Property(x => x.CreatedDate);
             builder.Property(x => x.ModifieddDate);
         }

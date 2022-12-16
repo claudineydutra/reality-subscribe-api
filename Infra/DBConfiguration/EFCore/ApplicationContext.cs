@@ -36,6 +36,7 @@ namespace Infra.DBConfiguration.EFCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new InscricaoMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
         }
     }
 }
