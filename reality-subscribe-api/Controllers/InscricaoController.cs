@@ -13,18 +13,15 @@ namespace reality_subscribe_api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<ActionResult> Create(CreateInscricaoCommand inscricao)
         {
-            var validationResult = await _mediator.Send(inscricao);
-            if (!validationResult.IsValid)
-            {
-                return ValidationError(validationResult.Errors);
-            }
-            return Ok(validationResult);
+            var result = await _mediator.Send(inscricao);
+
+            return Ok(result);
         }
 
-        [HttpGet("getall")]
+        [HttpGet("Getall")]
         public async Task<ActionResult<GetAllInscricaoCommandResult>> GetAll([FromQuery] GetAllInscricaoCommand request)
         {
             var result = await _mediator.Send(request);

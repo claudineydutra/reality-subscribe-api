@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Models;
+using reality_subscribe_api.Model;
 
 namespace Infra.Mapping
 {

@@ -6,7 +6,7 @@ using reality_subscribe_api.Model;
 
 namespace Application.UseCases.Inscricoes.Create
 {
-    public class CreateInscricaoHandler : IRequestHandler<CreateInscricaoCommand, ValidationResult>
+    public class CreateInscricaoHandler : IRequestHandler<CreateInscricaoCommand, InscricaoValidationResult>
     {
         private readonly IMapper _mapper;
         private readonly IARepository<Subscribe> _inscricaoRepository;
@@ -17,12 +17,8 @@ namespace Application.UseCases.Inscricoes.Create
             _inscricaoRepository = inscricaoRepository;
         }
 
-        public async Task<ValidationResult> Handle(CreateInscricaoCommand request, CancellationToken cancellationToken)
+        public async Task<InscricaoValidationResult> Handle(CreateInscricaoCommand request, CancellationToken cancellationToken)
         {
-            if (!request.IsValid())
-            {
-                return request.ValidationResult;
-            }
             var inscricao = _mapper.Map<Subscribe>(request);
 
             _inscricaoRepository.Insert(inscricao);

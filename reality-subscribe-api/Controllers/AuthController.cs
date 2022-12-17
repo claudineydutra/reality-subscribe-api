@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.Login;
+using Application.UseCases.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,17 +13,17 @@ namespace reality_subscribe_api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginCommand login)
         {
             var result = await _mediator.Send(login);
             return new ObjectResult(result);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register([FromBody] LoginCommand login)
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register([FromBody] RegisterCommand register)
         {
-            var result = await _mediator.Send(login);
+            var result = await _mediator.Send(register);
             return new ObjectResult(result);
         }
     }

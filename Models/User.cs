@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models;
+
+namespace reality_subscribe_api.Model
 {
     public class User : BaseEntity
     {

@@ -1,7 +1,7 @@
 ﻿using Application.Infra;
 using DevOne.Security.Cryptography.BCrypt;
 using MediatR;
-using Models;
+using reality_subscribe_api.Model;
 
 namespace Application.UseCases.Login
 {
@@ -41,8 +41,7 @@ namespace Application.UseCases.Login
 
             return new LoginCommandResult
             {
-                hasLogin = true,
-                Message = "Login OK",
+                hasLogin = true
             };
         }
     }

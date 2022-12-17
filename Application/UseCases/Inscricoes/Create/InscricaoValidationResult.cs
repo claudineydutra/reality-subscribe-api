@@ -1,8 +1,7 @@
-﻿using FluentValidation.Results;
-
+﻿
 namespace Application.UseCases.Inscricoes.Create
 {
-    public class InscricaoValidationResult : ValidationResult
+    public class InscricaoValidationResult
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
