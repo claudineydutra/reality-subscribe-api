@@ -1,6 +1,5 @@
 ﻿using Application.Infra;
 using AutoMapper;
-using FluentValidation.Results;
 using MediatR;
 using reality_subscribe_api.Model;
 

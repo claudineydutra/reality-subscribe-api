@@ -1,5 +1,4 @@
-﻿using FluentValidation.Results;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.UseCases.Inscricoes.Create
 {

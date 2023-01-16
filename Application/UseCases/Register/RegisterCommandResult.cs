@@ -2,7 +2,7 @@
 {
     public class RegisterCommandResult
     {
-        public bool Registered { get; set; }
+        public bool hasLogin { get; set; }
         public string? Message { get; set; }
     }
 }
