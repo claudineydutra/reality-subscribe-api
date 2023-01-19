@@ -14,6 +14,7 @@ namespace Infra.Mapping
             builder.Property(x => x.DataNascimento);
             builder.Property(x => x.CreatedDate);
             builder.Property(x => x.ModifieddDate);
+            builder.Property(x => x.Checked);
         }
     }
 }
