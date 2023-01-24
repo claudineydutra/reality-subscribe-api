@@ -28,7 +28,6 @@ namespace Application.UseCases.Inscricoes.Create
                 Id = inscricao.Id,
                 Nome = request.Nome,
                 Email = request.Email,
-                DataNascimento = request.DataNascimento,
             };
         }
     }
