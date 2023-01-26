@@ -1,5 +1,4 @@
-﻿using FluentValidation.Results;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.UseCases.Inscricoes.Create
 {
@@ -7,6 +6,6 @@ namespace Application.UseCases.Inscricoes.Create
     {
         public string Nome { get; set; }
         public string Email { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public List<Guid> FilesIds { get; set; }
     }
 }

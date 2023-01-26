@@ -1,5 +1,6 @@
 ﻿using Application.Infra;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using reality_subscribe_api.Model;
 
 namespace Application.UseCases.Inscricoes.GetAll
@@ -15,11 +16,12 @@ namespace Application.UseCases.Inscricoes.GetAll
 
         public async Task<GetAllInscricaoCommandResult> Handle(GetAllInscricaoCommand request, CancellationToken cancellationToken)
         {
-            var resultQuery = _repository.ToListAsync();
+            var listWithFiles = _repository.GetAll().Include(f => f.Files).ThenInclude(x => x.File).ToList();
+
 
             GetAllInscricaoCommandResult result = new GetAllInscricaoCommandResult
             {
-                InscricaoResult = resultQuery.Result
+                InscricaoResult = listWithFiles
             };
 
             return result;

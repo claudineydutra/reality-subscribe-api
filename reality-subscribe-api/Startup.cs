@@ -35,7 +35,9 @@ namespace reality_subscribe_api
             services.ConfigureCloudFoundryOptions(Configuration);
             //services.AddAllActuators(Configuration);
 
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -47,8 +49,6 @@ namespace reality_subscribe_api
                         .AllowCredentials();
                     });
             });
-
-            services.AddControllers();
 
             services.Configure<ForwardedHeadersOptions>(options =>
             {

@@ -23,8 +23,20 @@ namespace Application.UseCases.Register
             {
                 return new RegisterCommandResult
                 {
-                    Registered = false,
+                    hasLogin = false,
                     Message = "Campos vazios ou incorretos"
+                };
+            }
+            var user = _repository.Queryable()
+                .Where(x => x.Email == request.Email)
+                .FirstOrDefault();
+
+            if(user != null) 
+            {
+                return new RegisterCommandResult
+                {
+                    hasLogin = false,
+                    Message = "Usuario já existe no sistema"
                 };
             }
 
@@ -39,7 +51,7 @@ namespace Application.UseCases.Register
 
             return new RegisterCommandResult
             {
-                Registered = true
+                hasLogin = true
             };
 
         }

@@ -18,7 +18,7 @@ namespace Application.UseCases.Login
         {
 
             var user = _userRepository.Queryable()
-                .Where(x => x.Email == request.UserName)
+                .Where(x => x.Email == request.Email)
                 .FirstOrDefault();
 
             if (user == null)
@@ -30,7 +30,7 @@ namespace Application.UseCases.Login
                 };
             }
 
-            if (!BCryptHelper.CheckPassword(request.Password, user.Senha))
+            if (!BCryptHelper.CheckPassword(request.Senha, user.Senha))
             {
                 return new LoginCommandResult
                 {

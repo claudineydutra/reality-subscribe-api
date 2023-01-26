@@ -1,8 +1,10 @@
-﻿using Application.UseCases.Inscricoes.Create;
+﻿using Application.UseCases.File.Create;
+using Application.UseCases.Inscricoes.Create;
 using Application.UseCases.Login;
 using Application.UseCases.Register;
 using AutoMapper;
 using reality_subscribe_api.Model;
+using File = Models.File;
 
 namespace Infra.AutoMapper
 {
@@ -13,6 +15,7 @@ namespace Infra.AutoMapper
             CreateMap<Subscribe, CreateInscricaoCommand>().ReverseMap();
             CreateMap<User, LoginCommand>().ReverseMap();
             CreateMap<User, RegisterCommand>().ReverseMap();
+            CreateMap<File, CreateFIleCommand>().ReverseMap();
         }
     }
 }

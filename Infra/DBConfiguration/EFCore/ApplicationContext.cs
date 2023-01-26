@@ -37,6 +37,7 @@ namespace Infra.DBConfiguration.EFCore
         {
             modelBuilder.ApplyConfiguration(new InscricaoMap());
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new FIleMap());
         }
     }
 }

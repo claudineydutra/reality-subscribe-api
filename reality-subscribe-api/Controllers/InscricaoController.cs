@@ -1,4 +1,5 @@
-﻿using Application.UseCases.Inscricoes.Create;
+﻿using Application.UseCases.Inscricoes.Confirm;
+using Application.UseCases.Inscricoes.Create;
 using Application.UseCases.Inscricoes.GetAll;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,14 @@ namespace reality_subscribe_api.Controllers
             var result = await _mediator.Send(inscricao);
 
             return Ok(result);
+        }
+
+        [HttpPut("Confirm")]
+        public async Task<ActionResult> Confirm(ConfirmInscricaoCommand subs)
+        {
+            var result = await _mediator.Send(subs);
+
+            return Ok();
         }
 
         [HttpGet("Getall")]
