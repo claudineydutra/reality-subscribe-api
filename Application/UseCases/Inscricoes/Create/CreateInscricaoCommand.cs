@@ -6,8 +6,6 @@ namespace Application.UseCases.Inscricoes.Create
     {
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string AttachmentImage { get; set; }
-        public string AttachmentVideo { get; set; }
-        public string Video { get; set; }
+        public List<Guid> FilesIds { get; set; }
     }
 }

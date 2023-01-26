@@ -6,8 +6,7 @@ namespace reality_subscribe_api.Model
     {
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string AttachmentImage { get; set; }
-        public string AttachmentVideo { get; set; }
+        public List<SubscribeFile> Files { get; set; }
         public bool Checked { get; set; } = false;
     }
 }

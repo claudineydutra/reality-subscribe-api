@@ -7,6 +7,7 @@ namespace Application.Infra
     public interface IARepository<TEntity> where TEntity : class
     {
         DbContext DbContext { get; }
+        IQueryable<TEntity> GetAll();
         void DeleteRange(params TEntity[] pObjects);
         TEntity GetById(object id);
         IEnumerable<TEntity> GetAllByFilter(Expression<Func<TEntity, bool>> pFilter = null);

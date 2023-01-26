@@ -150,5 +150,11 @@ namespace Infra.Repository
         {
             _context.BulkSynchronize(entities);
         }
+
+        public IQueryable<TEntity> GetAll()
+        {
+            var x = _context.Set<TEntity>();
+            return _dbSet;
+        }
     }
 }
